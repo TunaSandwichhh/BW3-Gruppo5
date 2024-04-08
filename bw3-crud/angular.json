@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bw3_crudApp": {
+    "bw3-crud": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bw3-crud-app",
+            "outputPath": "dist/bw3-crud",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bw3_crudApp:build:production"
+              "browserTarget": "bw3-crud:build:production"
             },
             "development": {
-              "browserTarget": "bw3_crudApp:build:development"
+              "browserTarget": "bw3-crud:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bw3_crudApp:build"
+            "browserTarget": "bw3-crud:build"
           }
         },
         "test": {
@@ -100,8 +100,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "f0ba3db6-224a-41e9-aa11-6f1b3e3f8736"
   }
 }
