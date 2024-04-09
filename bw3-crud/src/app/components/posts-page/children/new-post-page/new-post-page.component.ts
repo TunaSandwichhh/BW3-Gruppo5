@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PostInterface } from 'src/app/models/post-interface';
 import { PostsServiceService } from 'src/services/posts-service.service';
 
@@ -11,7 +12,10 @@ import { PostsServiceService } from 'src/services/posts-service.service';
 export class NewPostPageComponent implements OnInit {
   newPostForm!: FormGroup;
 
-  constructor(private postService: PostsServiceService) {}
+  constructor(
+    private postService: PostsServiceService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.newPostForm = new FormGroup({
@@ -29,6 +33,9 @@ export class NewPostPageComponent implements OnInit {
       body: postBody,
     };
 
-    this.postService.createPost(newPost).subscribe((data) => console.log(data));
+    this.postService.createPost(newPost).subscribe((data) => {
+      alert('Post creato correttamente');
+      this.router.navigate(['/posts']);
+    });
   }
 }

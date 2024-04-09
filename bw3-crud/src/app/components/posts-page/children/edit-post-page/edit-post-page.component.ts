@@ -23,15 +23,17 @@ export class EditPostPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.id = params['id'];
+      this.postSrv.getPost(this.id).subscribe((data) => {
+        this.currentPost = data;
+        this.initForm();
+      });
     });
+  }
 
-    this.postSrv
-      .getPost(this.id)
-      .subscribe((data) => (this.currentPost = data));
-
+  initForm(): void {
     this.editPostForm = new FormGroup({
-      postTitle: new FormControl(this.currentPost.title, Validators.required),
-      postBody: new FormControl(this.currentPost.body, Validators.required),
+      postTitle: new FormControl(this.currentPost?.title, Validators.required),
+      postBody: new FormControl(this.currentPost?.body, Validators.required),
     });
   }
 
@@ -44,11 +46,15 @@ export class EditPostPageComponent implements OnInit {
       body: postBody,
     };
 
-    this.postSrv.updatePost(updatedPost, this.id);
+    this.postSrv.updatePost(updatedPost, this.id).subscribe(() => {
+      alert('Post modificato con successo');
+      this.router.navigate(['/posts']);
+    });
   }
 
   deletePost(id: string) {
     this.postSrv.deletePost(id).subscribe(() => {
+      alert('Post eliminato con successo');
       this.router.navigate(['/posts']);
     });
   }

@@ -19,7 +19,13 @@
           formControlName="postBody"
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Crea nuovo post</button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!newPostForm.valid"
+      >
+        Crea nuovo post
+      </button>
     </form>
   </div>
 </div>
