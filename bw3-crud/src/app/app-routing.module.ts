@@ -7,8 +7,6 @@ import { PostsPageComponent } from './components/posts-page/posts-page.component
 import { NewPostPageComponent } from './components/posts-page/children/new-post-page/new-post-page.component';
 import { PostDetailsComponent } from './components/posts-page/children/post-details/post-details.component';
 import { EditPostPageComponent } from './components/posts-page/children/edit-post-page/edit-post-page.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 const routes: Routes = [
@@ -26,8 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'posts',
-    component: PostsPageComponent,
     children: [
+      {
+        path: '',
+        component: PostsPageComponent,
+      },
       {
         path: 'new-post',
         component: NewPostPageComponent,
