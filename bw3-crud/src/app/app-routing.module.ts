@@ -24,8 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'posts',
-    component: PostsPageComponent,
     children: [
+      {
+        path: '',
+        component: PostsPageComponent,
+      },
       {
         path: 'new-post',
         component: NewPostPageComponent,

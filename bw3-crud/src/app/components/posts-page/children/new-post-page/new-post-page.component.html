@@ -1,11 +1,25 @@
-<form [formGroup]="newPostForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="title">Titolo Post</label>
-        <input type="text" name="title" formControlName="postTitle"/>
-    </div>
-    <div class="form-group">
-        <label for="body">Body Post</label>
-        <input type="text" name="body" formControlName="postBody"/>
-    </div>
-    <button type="submit">Crea nuovo post</button>
-</form>
+<div class="row justify-content-center">
+  <div class="col-6">
+    <form [formGroup]="newPostForm" (ngSubmit)="onSubmit()" class="mt-4">
+      <div class="mb-3">
+        <label for="title" class="form-label">Titolo Post</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          formControlName="postTitle"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="body" class="form-label">Body Post</label>
+        <textarea
+          class="form-control"
+          id="body"
+          rows="3"
+          formControlName="postBody"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Crea nuovo post</button>
+    </form>
+  </div>
+</div>

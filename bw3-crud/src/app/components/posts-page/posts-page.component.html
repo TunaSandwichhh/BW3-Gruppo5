@@ -1,12 +1,34 @@
-<div class="card" style="width: 18rem" *ngFor="let post of posts">
-  <img src="..." class="card-img-top" alt="..." />
-  <div class="card-body">
-    <h5 class="card-title">{{ post.title }}</h5>
-    <p class="card-text">{{ post.body }}</p>
-    <a [routerLink]="['details/', post.id]" class="btn btn-primary"
-      >Go somewhere</a
-    >
-    <a [routerLink]="['edit/', post.id]" class="btn btn-primary">Edit post</a>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="btn-group mb-3">
+        <a
+          routerLink="new-post"
+          class="btn btn-outline-success text-decoration-none"
+          >Crea Post</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card-columns">
+        <div class="card bg-light" *ngFor="let post of posts">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.body }}</p>
+            <a
+              [routerLink]="['details/', post.id]"
+              class="btn btn-outline-primary"
+              >Dettagli Post</a
+            >
+            <a [routerLink]="['edit/', post.id]" class="btn btn-outline-success"
+              >Modifica Post</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
