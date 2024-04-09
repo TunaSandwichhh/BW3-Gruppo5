@@ -1,24 +1,29 @@
-<form [formGroup]="editPostForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="title">Titolo Post</label>
-    <input
-      type="text"
-      name="title"
-      formControlName="postTitle"
-      [value]="currentPost.title"
-    />
+<div class="row justify-content-center">
+  <div class="col-6">
+    <form [formGroup]="editPostForm" (ngSubmit)="onSubmit()" class="mt-4">
+      <div class="mb-3">
+        <label for="title" class="form-label">Titolo Post</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          formControlName="postTitle"
+          [value]="currentPost.title"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="body" class="form-label">Body Post</label>
+        <textarea
+          class="form-control"
+          id="body"
+          rows="3"
+          formControlName="postBody"
+          [value]="currentPost.body"
+          >{{ currentPost.body }}</textarea
+        >
+      </div>
+      <button type="submit" class="btn btn-primary">Modifica post</button>
+      <button class="btn btn-danger" (click)="deletePost(id)">Elimina</button>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="body">Body Post</label>
-    <input
-      type="text"
-      name="body"
-      formControlName="postBody"
-      [value]="currentPost.body"
-    />
-  </div>
-  <button type="submit">Modifica post</button>
-  <button class="btn btn-danger" (click)="deletePost(id)" type="">
-    Elimina
-  </button>
-</form>
+</div>
