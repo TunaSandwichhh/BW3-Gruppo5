@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { PostInterface } from 'src/app/models/post-interface';
 import { PostsServiceService } from 'src/services/posts-service.service';
 
@@ -14,9 +14,11 @@ export class EditPostPageComponent implements OnInit {
   editPostForm!: FormGroup;
   id!: string;
 
+
   constructor(
     private postSrv: PostsServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -44,5 +46,10 @@ export class EditPostPageComponent implements OnInit {
     };
 
     this.postSrv.updatePost(updatedPost, this.id);
+  }
+  deletePost(id:string){
+    this.postSrv.deletePost(id).subscribe(()=>{
+          this.router.navigate(['/posts']);
+    });
   }
 }
