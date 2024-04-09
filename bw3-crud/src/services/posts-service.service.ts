@@ -8,16 +8,19 @@ import { PostInterface } from 'src/app/models/post-interface';
 })
 export class PostsServiceService {
 
-  apiURL = 'http://localhost:3000/';
+  apiURL = 'http://localhost:3000/posts/';
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<PostInterface[]> {
-    return this.http.get<PostInterface[]>(this.apiURL + 'posts');
+    return this.http.get<PostInterface[]>(this.apiURL);
   }
 
   getPost(id:number): Observable<PostInterface> {
-    return this.http.get<PostInterface>(this.apiURL + `posts/${id}`);
+    return this.http.get<PostInterface>(this.apiURL + id);
   }
 
+  createPost(body:PostInterface) {
+    return this.http.post<any>(this.apiURL, body)
+  }
 
 }
