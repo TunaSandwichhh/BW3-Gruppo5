@@ -18,4 +18,6 @@ export class PostsPageComponent implements OnInit {
       this.posts = data;
     })
   }
+
+
 }

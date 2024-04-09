@@ -14,4 +14,10 @@ export class PostsServiceService {
   getPosts(): Observable<PostInterface[]> {
     return this.http.get<PostInterface[]>(this.apiURL + 'posts');
   }
+
+  getPost(id:number): Observable<PostInterface> {
+    return this.http.get<PostInterface>(this.apiURL + `posts/${id}`);
+  }
+
+
 }
