@@ -1,1 +1,11 @@
-<p>edit-post-page works!</p>
+<form [formGroup]="editPostForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Titolo Post</label>
+    <input type="text" name="title" formControlName="postTitle" />
+  </div>
+  <div class="form-group">
+    <label for="body">Body Post</label>
+    <input type="text" name="body" formControlName="postBody" />
+  </div>
+  <button type="submit">Modifica post</button>
+</form>
