@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       returnSecureToken: true,
     };
 
-    this.authSrv.login(loginRequestBody).subscribe((data: any) => {
+    this.authSrv.login(loginRequestBody).subscribe((data:any) => {
       console.log(data);
 
       const expirationDate = new Date(
@@ -53,6 +53,8 @@ export class LoginComponent implements OnInit {
         'userSession',
         JSON.stringify(this.authSrv.userSession)
       );
+
+      setTimeout(()=>{this.authSrv.logout()},data.expiresIn * 1000)
 
       if (this.authSrv.isAuthenticated()) {
         alert('Login effettuato con successo');

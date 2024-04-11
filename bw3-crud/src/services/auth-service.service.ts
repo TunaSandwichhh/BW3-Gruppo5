@@ -39,6 +39,8 @@ export class AuthServiceService {
     localStorage.removeItem('userSession');
     this.router.navigate(['/']);
   }
+  
+
 
   createUserSession(
     email: string,
