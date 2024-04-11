@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
       returnSecureToken: true,
     };
 
-    this.authSrv.login(loginRequestBody).subscribe((data:any) => {
-      console.log(data);
+    this.authSrv.login(loginRequestBody).subscribe((data: any) => {
+      console.log('firerbase session:', data);
 
       const expirationDate = new Date(
         new Date().getTime() + data.expiresIn * 1000
@@ -44,17 +44,21 @@ export class LoginComponent implements OnInit {
 
       this.authSrv.createUserSession(
         data.email,
-        data.id,
-        data.token,
+        data.localId,
+        data.idToken,
         expirationDate
       );
+
+      console.log('la nostra session:', this.authSrv.userSession);
 
       localStorage.setItem(
         'userSession',
         JSON.stringify(this.authSrv.userSession)
       );
 
-      setTimeout(()=>{this.authSrv.logout()},data.expiresIn * 1000)
+      setTimeout(() => {
+        this.authSrv.logout();
+      }, data.expiresIn * 1000);
 
       if (this.authSrv.isAuthenticated()) {
         alert('Login effettuato con successo');
