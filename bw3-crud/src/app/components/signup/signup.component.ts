@@ -15,6 +15,10 @@ export class SignupComponent implements OnInit {
   constructor(private authSrv: AuthServiceService, private router: Router) {}
 
   ngOnInit(): void {
+    if (this.authSrv.isAuthenticated()) {
+      this.router.navigate(['/posts']);
+    }
+
     this.signupForm = new FormGroup({
       firstName: new FormControl(null, Validators.required),
       lastName: new FormControl(null, Validators.required),

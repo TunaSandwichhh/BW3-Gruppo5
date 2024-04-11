@@ -8,6 +8,7 @@ import { NewPostPageComponent } from './components/posts-page/children/new-post-
 import { PostDetailsComponent } from './components/posts-page/children/post-details/post-details.component';
 import { EditPostPageComponent } from './components/posts-page/children/edit-post-page/edit-post-page.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { AuthGuard } from './auth/auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'posts',
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

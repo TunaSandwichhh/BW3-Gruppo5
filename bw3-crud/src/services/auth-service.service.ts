@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserSession } from 'src/app/models/UserSession';
+import { LoginRequestBody } from 'src/app/models/login-request-body.interface';
 import { SignupRequestBody } from 'src/app/models/signup-request-body.interface';
 
 @Injectable({
@@ -17,7 +19,7 @@ export class AuthServiceService {
 
   userSession!: UserSession | null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   isAuthenticated() {
     return this.isLoggedIn;
@@ -25,5 +27,26 @@ export class AuthServiceService {
 
   signup(body: SignupRequestBody) {
     return this.http.post(this.signupUrl, body);
+  }
+
+  login(body: LoginRequestBody) {
+    return this.http.post(this.loginUrl, body);
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+    this.userSession = null;
+    localStorage.removeItem('userSession');
+    this.router.navigate(['/']);
+  }
+
+  createUserSession(
+    email: string,
+    id: string,
+    token: string,
+    expirationDate: Date
+  ) {
+    this.userSession = new UserSession(email, id, token, expirationDate);
+    this.isLoggedIn = true;
   }
 }

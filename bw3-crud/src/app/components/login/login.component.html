@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="container">
+  <h1>Login</h1>
+  <hr />
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Indirizzo Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+        placeholder="Inserisci email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        placeholder="Inserisci Password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
+      Invia
+    </button>
+  </form>
+</div>
