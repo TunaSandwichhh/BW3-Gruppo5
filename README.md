@@ -119,6 +119,17 @@ L'applicazione utilizza Firebase per gestire l'autenticazione degli utenti. Fire
 Per registrarsi o accedere, gli utenti possono utilizzare la procedura standard di Firebase, che include la compilazione di un modulo con email e password. Una volta completata la procedura di registrazione o accesso, Firebase fornisce un token di autenticazione che viene utilizzato per verificare l'identità dell'utente nelle successive richieste.
 
 Firebase gestisce anche automaticamente la validità delle password, garantendo che siano sicure e aggiornate secondo le best practice di sicurezza.
+
+## BUILD & HOSTING
+
+<img src="./bw3-crud/src/assets/awslogo.png" width="100px">
+
+L'applicazione è stata distribuita su AWS Amplify utilizzando la cartella dist generata dopo l'esecuzione del comando ng build. La cartella dist contiene tutti i file statici necessari per l'esecuzione dell'applicazione Angular.
+
+L'applicazione è attualmente ospitata su AWS Amplify all'URL seguente:
+
+[URL APP]
+
 <br><br>
 
 ## Collaboratori
