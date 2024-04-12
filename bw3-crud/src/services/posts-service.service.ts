@@ -27,6 +27,6 @@ export class PostsServiceService {
     return this.http.put<any>(`${this.apiURL}/${id}.json`, body);
   }
   deletePost(id: string) {
-    return this.http.delete(`${this.apiURL}/${id}.json` + id);
+    return this.http.delete(`${this.apiURL}/${id}.json`);
   }
 }

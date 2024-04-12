@@ -34,8 +34,15 @@ export class NewPostPageComponent implements OnInit {
     };
 
     this.postService.createPost(newPost).subscribe((data) => {
-      alert('Post creato correttamente');
-      this.router.navigate(['/posts']);
+      const postId = data.name;
+      console.log(postId);
+      newPost.id = postId;
+      console.log(newPost);
+
+      this.postService.updatePost(newPost, postId).subscribe(() => {
+        alert('Post creato correttamente');
+        this.router.navigate(['/posts']);
+      });
     });
   }
 }

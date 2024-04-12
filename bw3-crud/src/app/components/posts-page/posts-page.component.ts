@@ -25,6 +25,8 @@ export class PostsPageComponent implements OnInit {
         })
       )
       .subscribe((postsArray: PostInterface[]) => {
+        console.log(postsArray);
+
         this.posts = postsArray;
       });
   }
