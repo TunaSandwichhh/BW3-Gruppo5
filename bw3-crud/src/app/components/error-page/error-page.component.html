@@ -1,13 +1,16 @@
 <div class="container text-center">
-  <h1>Errore 404 - Pagina non trovata</h1>
-  <p>La pagina che stai cercando non è disponibile.</p>
+  <h1 class="text-white">Errore 404 - Pagina non trovata</h1>
+  <p class="text-white">La pagina che stai cercando non è disponibile.</p>
   <a
     routerLink="/posts"
     *ngIf="authSrv.isAuthenticated()"
-    class="btn btn-primary"
+    class="btn btn-primary backHomeBtn"
     >Torna alla pagina dei post</a
   >
-  <a routerLink="/" *ngIf="!authSrv.isAuthenticated()" class="btn btn-primary"
+  <a
+    routerLink="/"
+    *ngIf="!authSrv.isAuthenticated()"
+    class="btn btn-primary backPostsBtn"
     >Torna alla home page</a
   >
 </div>
