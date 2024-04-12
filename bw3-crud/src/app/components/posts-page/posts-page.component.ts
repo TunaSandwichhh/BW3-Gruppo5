@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { PostInterface } from 'src/app/models/post-interface';
 import { PostsServiceService } from 'src/services/posts-service.service';
 
@@ -13,8 +14,18 @@ export class PostsPageComponent implements OnInit {
   constructor(private postService: PostsServiceService) {}
 
   ngOnInit(): void {
-    this.postService.getPosts().subscribe((data) => {
-      this.posts = data;
-    });
+    this.postService
+      .getPosts()
+      .pipe(
+        map((postsObject) => {
+          return Object.keys(postsObject).map((key: any) => ({
+            id: key,
+            ...postsObject[key],
+          }));
+        })
+      )
+      .subscribe((postsArray: PostInterface[]) => {
+        this.posts = postsArray;
+      });
   }
 }

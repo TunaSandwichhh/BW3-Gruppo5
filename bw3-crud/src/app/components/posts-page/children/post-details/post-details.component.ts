@@ -25,8 +25,10 @@ export class PostDetailsComponent implements OnInit {
   }
 
   getPostDetails() {
-    this.postSrv.getPost(this.id).subscribe((data) => {
-      this.post = data;
-    });
+    if (this.id) {
+      this.postSrv.getPost(this.id).subscribe((data) => {
+        this.post = data;
+      });
+    }
   }
 }
