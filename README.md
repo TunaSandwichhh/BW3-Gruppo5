@@ -102,15 +102,10 @@ Implementa metodi come getPosts, getPost, createPost, updatePost e deletePost.<b
 
 ## DATABASE
 
-Il progetto utilizza JSON Server come database per immagazzinare tutti i post dell'applicazione. JSON Server è uno strumento semplice per creare rapidamente una API RESTful da un file JSON. Nel nostro caso, JSON Server ci consente di simulare un backend per gestire i dati dei post.<br><br>
-Avvia JSON Server specificando il file JSON come database, eseguendo il seguente comando nella directory 'assets':
-
-```bash
-json-server --watch db.json
-```
+Il progetto utilizza Firebase RealTime Database come database per immagazzinare tutti i post dell'applicazione. RealTime Database è uno strumento semplice per creare rapidamente una API RESTful. Nel nostro caso, RealTime Database ci consente di simulare un backend per gestire i dati dei post.<br><br>
 
 <br>
-Una volta avviato JSON Server, sarà possibile accedere ai dati dei post attraverso le relative API RESTful all'indirizzo http://localhost:3000/posts.
+Sarà possibile accedere ai dati dei post attraverso le relative API RESTful all'indirizzo https://bw3-gruppo6-default-rtdb.europe-west1.firebasedatabase.app/posts.
 
 ## AUTENTICAZIONE
 
