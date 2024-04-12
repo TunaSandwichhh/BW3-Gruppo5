@@ -44,6 +44,7 @@ export class EditPostPageComponent implements OnInit {
     const updatedPost: PostInterface = {
       title: postTitle,
       body: postBody,
+      id: this.currentPost.id,
     };
 
     this.postSrv.updatePost(updatedPost, this.id).subscribe(() => {
