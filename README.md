@@ -128,7 +128,7 @@ L'applicazione è stata distribuita su AWS Amplify utilizzando la cartella dist 
 
 L'applicazione è attualmente ospitata su AWS Amplify all'URL seguente:
 
-[URL APP]
+https://dev.d321ln9pwk52yz.amplifyapp.com/
 
 <br><br>
 
