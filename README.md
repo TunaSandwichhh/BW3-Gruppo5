@@ -116,7 +116,7 @@ Per registrarsi o accedere, gli utenti possono utilizzare la procedura standard 
 Firebase gestisce anche automaticamente la validità delle password, garantendo che siano sicure e aggiornate secondo le best practice di sicurezza.
 
 ## BUILD & HOSTING
-
+<img src=https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png>
 <img src="./bw3-crud/src/assets/awslogo.png" width="100px">
 
 L'applicazione è stata distribuita su AWS Amplify utilizzando la cartella dist generata dopo l'esecuzione del comando ng build. La cartella dist contiene tutti i file statici necessari per l'esecuzione dell'applicazione Angular.
