@@ -4,7 +4,7 @@
       <div class="btn-group mb-3">
         <a
           routerLink="new-post"
-          class="btn btn-outline-success text-decoration-none"
+          class="btn btn-secondary text-decoration-none"
           >Crea Post</a
         >
       </div>
@@ -12,20 +12,14 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <div class="card-columns">
-        <div class="card bg-light mb-4" *ngFor="let post of posts">
-          <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.body }}</p>
-            <a
-              [routerLink]="['details/', post.id]"
-              class="btn btn-outline-primary"
-              >Dettagli Post</a
-            >
-            <a [routerLink]="['edit/', post.id]" class="btn btn-outline-success"
-              >Modifica Post</a
-            >
-          </div>
+      <div class="card my-3" *ngFor="let post of posts">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.body}}</p>
+          <a [routerLink]="['details/', post.id]"
+           class="btn btn-primary mx-1 detailBtn" data-mdb-ripple-init>Dettagli Post</a>
+          <a [routerLink]="['edit/', post.id]"
+           class="btn btn-success mx-1 editBtn" data-mdb-ripple-init>Modifica Post</a>
         </div>
       </div>
     </div>
