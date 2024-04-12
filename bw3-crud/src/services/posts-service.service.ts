@@ -7,25 +7,26 @@ import { PostInterface } from 'src/app/models/post-interface';
   providedIn: 'root',
 })
 export class PostsServiceService {
-  apiURL = 'http://localhost:3000/posts/';
+  apiURL =
+    'https://bw3-gruppo6-default-rtdb.europe-west1.firebasedatabase.app/posts';
   constructor(private http: HttpClient) {}
 
   getPosts(): Observable<PostInterface[]> {
-    return this.http.get<PostInterface[]>(this.apiURL);
+    return this.http.get<PostInterface[]>(`${this.apiURL}/.json`);
   }
 
   getPost(id: string): Observable<PostInterface> {
-    return this.http.get<PostInterface>(this.apiURL + id);
+    return this.http.get<PostInterface>(`${this.apiURL}/${id}.json`);
   }
 
   createPost(body: PostInterface) {
-    return this.http.post<any>(this.apiURL, body);
+    return this.http.post<any>(`${this.apiURL}/.json`, body);
   }
 
   updatePost(body: PostInterface, id: string) {
-    return this.http.put<any>(this.apiURL + id, body);
+    return this.http.put<any>(`${this.apiURL}/${id}.json`, body);
   }
-  deletePost(id:string){
-    return this.http.delete(this.apiURL+id);
+  deletePost(id: string) {
+    return this.http.delete(`${this.apiURL}/${id}.json`);
   }
 }
