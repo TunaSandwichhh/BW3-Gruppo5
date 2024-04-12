@@ -116,7 +116,14 @@ Per registrarsi o accedere, gli utenti possono utilizzare la procedura standard 
 Firebase gestisce anche automaticamente la validità delle password, garantendo che siano sicure e aggiornate secondo le best practice di sicurezza.
 
 ## BUILD & HOSTING
-<img src=https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png>
+<img src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" width="100px">
+<img src="https://user-images.githubusercontent.com/25181517/183890595-779a7e64-3f43-4634-bad2-eceef4e80268.png" width="100px">
+<img src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" width="100px">
+<img src="https://user-images.githubusercontent.com/25181517/192108891-d86b6220-e232-423a-bf5f-90903e6887c3.png" width="100px">
+<img src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" width="100px">
+<img src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" width="100px">
+<img src="https://user-images.githubusercontent.com/25181517/192158956-48192682-23d5-4bfc-9dfb-6511ade346bc.png" width="100px">
+<img src="" width="100px">
 <img src="./bw3-crud/src/assets/awslogo.png" width="100px">
 
 L'applicazione è stata distribuita su AWS Amplify utilizzando la cartella dist generata dopo l'esecuzione del comando ng build. La cartella dist contiene tutti i file statici necessari per l'esecuzione dell'applicazione Angular.
@@ -129,9 +136,9 @@ https://dev.d321ln9pwk52yz.amplifyapp.com/
 
 ## Collaboratori
 
-- [Ferdinando Di Nocera](https://github.com/fdinocera)
-- [Mishel Cakalli](https://github.com/MishelCakalli)
-- [Rosa Giordano](https://github.com/Rosannag16)
-- [Simone Castelluccio](https://github.com/Simonecaste96)
-- [Paola Del Vecchio](https://github.com/smoulderpipe)
-- [Davide Faggionato](https://github.com/TunaSandwichhh)
+- [Ferdinando Di Nocera](https://github.com/fdinocera)🖥️
+- [Mishel Cakalli](https://github.com/MishelCakalli)🪒
+- [Rosa Giordano](https://github.com/Rosannag16)✨
+- [Simone Castelluccio](https://github.com/Simonecaste96)🔨
+- [Paola Del Vecchio](https://github.com/smoulderpipe)🔬
+- [Davide Faggionato](https://github.com/TunaSandwichhh)🤖
