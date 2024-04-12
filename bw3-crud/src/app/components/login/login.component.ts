@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     };
 
     this.authSrv.login(loginRequestBody).subscribe((data: any) => {
-      console.log('firerbase session:', data);
+      console.log('firebase session:', data);
 
       const expirationDate = new Date(
         new Date().getTime() + data.expiresIn * 1000

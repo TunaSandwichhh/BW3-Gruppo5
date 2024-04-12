@@ -1,14 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-3 text-center">
+    <div
+      *ngIf="!authSrv.isAuthenticated()"
+      class="col-md-6 offset-md-3 text-center"
+    >
       <h1>Benvenuto!</h1>
       <p>
         Benvenuto alla nostra piattaforma. Per continuare, effettua il login o
         registrati.
       </p>
       <div class="btn-group mt-3" role="group" aria-label="Accesso">
-        <a href="/signup" class="btn btn-primary">Registrati</a>
-        <a href="/login" class="btn btn-secondary">Accedi</a>
+        <a routerLink="/signup" class="btn btn-primary">Registrati</a>
+        <a routerLink="/login" class="btn btn-secondary">Accedi</a>
+      </div>
+    </div>
+
+    <div
+      *ngIf="authSrv.isAuthenticated()"
+      class="col-md-6 offset-md-3 text-center"
+    >
+      <h1>Bentornato!</h1>
+      <p>Riprendi da dove avevi lasciato</p>
+      <div class="btn-group mt-3" role="group" aria-label="Accesso">
+        <a routerLink="/signup" class="btn btn-primary">Home</a>
       </div>
     </div>
   </div>
